@@ -4,10 +4,10 @@
 //:
 //:  Write a custom argument label before the parameter name, or write `_` to use no argument label.
 //:
-func greet(_ person: String, on day: String) -> String {
-    return "Hello \(person), today is \(day)."
+func greet(_ person: String, _ lunch: String) -> String {
+    return "Hello \(person), today's lunch special is \(lunch)."
 }
-greet("John", on: "Wednesday")
+greet("John", "Red Curry")
 
 //: 2.)
 //:
