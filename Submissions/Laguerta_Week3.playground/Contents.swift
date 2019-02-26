@@ -16,15 +16,20 @@ greet("John", "Red Curry")
 var numbers = [20, 19, 7, 12]
 
 //: full "syntactic sugar" form:
-numbers.map({ (number: Int) -> Int in
-    let result = 3 * number
-    return result
+var closureNumbers = numbers.map({ (number: Int) -> Int in
+    let result = 0
+    if number % 2 != 0 {
+        return result
+    } else {
+        return number
+    }
 })
+print(closureNumbers)
 //: omitting parameters and return type form:
-let mappedNumbers = numbers.map({ number in 3 * number })
+let mappedNumbers = numbers.map({ number in number % 2 != 0 ? 0: number})
 print(mappedNumbers)
 //: reference variable form:
-let mappedNums = numbers.map { 3 * $0 }
+let mappedNums = numbers.map { $0 % 2 != 0 ? 0: $0}
 print(mappedNums)
 //: ## Objects and Classes
 //: 3.)
