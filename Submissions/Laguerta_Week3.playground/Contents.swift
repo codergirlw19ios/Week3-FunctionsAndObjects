@@ -41,9 +41,13 @@ print(mappedNums)
 //: This version of the `Shape` class is missing something important: an initializer to set up the class when an instance is created. Use `init` to create one.
 //:
 class Shape {
+    let definition = "A 'shape' is simply a geometric figure."
     var numberOfSides = 0
     func simpleDescription() -> String {
         return "A shape with \(numberOfSides) sides."
+    }
+    func areaOfQuadrilaterals(base: Float, height: Float) -> Float{
+        return (base * height)
     }
 }
 
