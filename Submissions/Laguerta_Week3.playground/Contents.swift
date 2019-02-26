@@ -43,12 +43,18 @@ print(mappedNums)
 class Shape {
     let definition = "A 'shape' is simply a geometric figure."
     var numberOfSides = 0
+    
+    init(definition: String, numberOfSides: Int) {
+        self.numberOfSides = numberOfSides
+    }
+    
     func simpleDescription() -> String {
         return "A shape with \(numberOfSides) sides."
     }
     func areaOfQuadrilaterals(base: Float, height: Float) -> Float{
         return (base * height)
     }
+    
 }
 
 //: 5.)
