@@ -74,6 +74,25 @@ class NamedShape {
     }
 }
 
+class Circle: NamedShape {
+    var radius: Float = 3.0
+    
+    init(radius: Float, name: String){
+        self.radius = radius
+        super.init(name: name)
+    }
+    
+    func area() -> Float {
+        
+        return radius * radius * 3.14
+    }
+    
+    override func simpleDescription() -> String {
+        return "A shape with no sides."
+    }
+}
+
+
 //: ## Enumerations and Structures
 //: 6.)
 //:
