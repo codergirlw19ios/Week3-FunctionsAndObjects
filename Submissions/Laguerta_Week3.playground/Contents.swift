@@ -117,9 +117,22 @@ enum Rank: Int {
             return String(self.rawValue)
         }
     }
+
 }
 let ace = Rank.ace
 let aceRawValue = ace.rawValue
+
+func compareRank(rank1: Rank, rank2: Rank) -> String {
+    if rank1.rawValue == rank2.rawValue {
+        return "These cards have the same rank."
+    } else if rank1.rawValue > rank2.rawValue {
+        return "\(rank1) is greater than \(rank2)."
+    } else {
+        return "\(rank1) is less than \(rank2)."
+    }
+}
+print(compareRank(rank1: Rank.ace, rank2: Rank.eight))
+print(compareRank(rank1: Rank.king, rank2: Rank.ten))
 
 //: 7.)
 //:
