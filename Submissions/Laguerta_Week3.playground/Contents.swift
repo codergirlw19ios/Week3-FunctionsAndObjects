@@ -167,6 +167,7 @@ let hearts = Suit.hearts
 let heartsDescription = hearts.simpleDescription()
 let heartsColor = hearts.color()
 print(Suit.spades.color())
+
 //: 8.)
 //:
 //: Add a third case to `ServerResponse` and to the switch.
@@ -174,16 +175,20 @@ print(Suit.spades.color())
 enum ServerResponse {
     case result(String, String)
     case failure(String)
+    case forbidden(String)
 }
 
 let success = ServerResponse.result("6:00 am", "8:09 pm")
 let failure = ServerResponse.failure("Out of cheese.")
+let forbidden = ServerResponse.forbidden("The Restricted Section of the Hogwarts Library")
 
 switch success {
 case let .result(sunrise, sunset):
     print("Sunrise is at \(sunrise) and sunset is at \(sunset).")
 case let .failure(message):
     print("Failure...  \(message)")
+case let .forbidden(restricted):
+    print("Sorry, it seems like you've stumbled upon \(restricted).")
 }
 
 //: 9.)
