@@ -153,10 +153,20 @@ enum Suit {
             return "clubs"
         }
     }
+    
+    func color() -> String {
+        switch self {
+        case .spades, .clubs:
+            return "black"
+        case .hearts, .diamonds:
+            return "red"
+        }
+    }
 }
 let hearts = Suit.hearts
 let heartsDescription = hearts.simpleDescription()
-
+let heartsColor = hearts.color()
+print(Suit.spades.color())
 //: 8.)
 //:
 //: Add a third case to `ServerResponse` and to the switch.
