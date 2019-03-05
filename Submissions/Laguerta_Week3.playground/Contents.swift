@@ -98,7 +98,7 @@ class Circle: NamedShape {
 //:
 //: Write a function that compares two `Rank` values by comparing their raw values.
 //:
-enum Rank: Int {
+enum Rank: Int, CaseIterable {
     case ace = 1
     case two, three, four, five, six, seven, eight, nine, ten
     case jack, queen, king
@@ -138,7 +138,7 @@ print(compareRank(rank1: Rank.king, rank2: Rank.ten))
 //:
 //: Add a `color()` method to `Suit` that returns “black” for spades and clubs, and returns “red” for hearts and diamonds.
 //:
-enum Suit {
+enum Suit: CaseIterable {
     case spades, hearts, diamonds, clubs
     
     func simpleDescription() -> String {
@@ -204,3 +204,14 @@ struct Card {
 }
 let threeOfSpades = Card(rank: .three, suit: .spades)
 let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+
+func getDeck() -> [Card] {
+    var deckOfCards = [Card]()
+    for rank in Rank.allCases {
+        for suit in Suit.allCases {
+            deckOfCards += [Card(rank: rank, suit: suit)]
+        }
+    }
+    return deckOfCards
+}
+print(getDeck())
