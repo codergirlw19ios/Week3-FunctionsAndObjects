@@ -17,13 +17,13 @@ var numbers = [20, 19, 7, 12]
 
 //: full "syntactic sugar" form:
 numbers.map({ (number: Int) -> Int in
-    return number % 2 == 0 ? 3 * number : 0
+    return number % 2 == 0 ? 0 : 3 * number
 })
 //: omitting parameters and return type form:
-let mappedNumbers = numbers.map({ number in number % 2 == 0 ? 3 * number : 0 })
+let mappedNumbers = numbers.map({ number in number % 2 == 0 ? 0 : 3 * number })
 print(mappedNumbers)
 //: reference variable form:
-let mappedNums = numbers.map { $0 % 2 == 0 ? 3 * $0 : 0 }
+let mappedNums = numbers.map { $0 % 2 == 0 ? 0 : 3 * $0 }
 print(mappedNums)
 //: ## Objects and Classes
 //: 3.)
